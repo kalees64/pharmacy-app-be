@@ -17,6 +17,9 @@ export class Drug extends Document {
 
   @Prop()
   dosage: string;
+
+  @Prop()
+  qrCode: string;
 }
 
 export const DrugSchema = SchemaFactory.createForClass(Drug);
