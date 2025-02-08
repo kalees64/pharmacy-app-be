@@ -11,6 +11,11 @@ async function bootstrap() {
     credentials: true,
   });
 
-  await app.listen(process.env.PORT ?? 3000);
+  await app.listen(process.env.PORT ?? 3000, () => {
+    console.debug(
+      '\x1b[35m',
+      `[Nest] - \t ${new Date().toLocaleString()} \t LOG : Server is running on http://localhost:${process.env.PORT ?? 3000}`,
+    );
+  });
 }
 bootstrap();
